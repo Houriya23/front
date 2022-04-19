@@ -1,0 +1,38 @@
+<div class="header"></div>
+<div class="navbar">
+  <nav class="navMenu">
+    <a routerLink="/home">ACCEUIL</a>
+    <a
+      class="dropdown-toggle"
+      data-toggle="dropdown"
+      role="button"
+      aria-haspopup="true"
+      aria-expanded="false"
+      >NOS SERVICES <span class="caret"></span
+    ></a>
+    <ul class="dropdown-menu">
+      <li><a [routerLink]="['/service', 'apresEcole']">Après Ecole</a></li>
+      <li><a [routerLink]="['/service', 'menage']">Ménage</a></li>
+      <li><a [routerLink]="['/service', 'electricite']">Electricité</a></li>
+      <li>
+        <a [routerLink]="['/service', 'autonomie']">Aide à l'autonomie</a>
+      </li>
+      <li><a [routerLink]="['/service', 'jardinier']">Jardinier</a></li>
+    </ul>
+    <a routerLink="/heroes">NOUS CONTACTER</a>
+  </nav>
+  <div class="logo">
+    <img
+      src="../../assets/logo-modified.png"
+      alt="logo"
+      width="165.54"
+      height="165.65"
+    />
+  </div>
+  <nav class="navMenu rightNav">
+    <a routerLink="/helpLine">Helpline</a>
+  </nav>
+  <nav class="navMenu rightNav2">
+    <a routerLink="/signup">NOUS REJOINDRE</a>
+  </nav>
+</div>

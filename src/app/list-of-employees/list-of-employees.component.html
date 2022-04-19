@@ -1,0 +1,123 @@
+<nav class="SearchBar">
+  <input placeholder="Nom" type="text" id="ip2" [(ngModel)]="lastname" />
+  <button style="border: none; background-color: white">
+    <i class="fa fa-search icon" (click)="search()"></i>
+  </button>
+  <button style="border: none; background-color: white" (click)="filters()">
+    Filters
+  </button>
+</nav>
+<div class="filter" *ngIf="filter">
+  <nav class="SearchBar2">
+    <input placeholder="Ville" type="text" id="ip3" [(ngModel)]="town" />
+    <button style="border: none; background-color: white">
+      <i class="fa fa-search icon" (click)="searchbyTown()"></i>
+    </button>
+  </nav>
+  <nav class="SearchBar2">
+    <select
+      class="form-control"
+      style="
+        width: 400px;
+        border: 2px solid rgba(202, 202, 202, 0.52);
+        border-radius: 25px;
+        display: unset !important;
+      "
+      [(ngModel)]="genre"
+    >
+      <option value="homme">Homme</option>
+
+      <option value="femme">Femme</option>
+    </select>
+    <button style="border: none; background-color: white">
+      <i class="fa fa-search icon" (click)="searchByGenre()"></i>
+    </button>
+  </nav>
+</div>
+<div class="container" *ngFor="let emp of employees">
+  <div class="col-xs-12 col-md-12 col-xl-12">
+    <!-- First product box start here-->
+    <div class="prod-info-main prod-wrap clearfix">
+      <div class="row">
+        <div class="col-md-5 col-sm-12 col-xs-12">
+          <div class="product-image">
+            <img
+              src="../../assets/male.png"
+              width="350"
+              height="250"
+              *ngIf="emp.gender == 'homme'"
+              class="img-responsive"
+            />
+            <img
+              src="../../assets/female.jfif"
+              width="350"
+              height="250"
+              *ngIf="emp.gender == 'femme'"
+              class="img-responsive"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-7 col-sm-12 col-xs-12">
+          <div class="product-deatil">
+            <h5 class="name">
+              <a href="#"> {{ emp.firstName }} </a>
+
+              <a href="#">
+                <span>{{ emp.job }} from {{ emp.town }}</span>
+              </a>
+            </h5>
+
+            <p class="price-container">
+              <span>${{ emp.hourPrice }}</span>
+            </p>
+
+            <span class="tag1"></span>
+          </div>
+
+          <div class="description">
+            <p>{{ emp.gender }}</p>
+          </div>
+          <div class="description">
+            <p>Tel:{{ emp.telNumber }}</p>
+          </div>
+          <div class="product-info smart-form">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="#" class="btn btn-danger">Add to cart</a>
+              </div>
+
+              <div class="col-md-12">
+                <div class="rating">
+                  Rating:
+
+                  <label for="stars-rating-5"
+                    ><i class="fa fa-star text-danger"></i
+                  ></label>
+
+                  <label for="stars-rating-4"
+                    ><i class="fa fa-star text-danger"></i
+                  ></label>
+
+                  <label for="stars-rating-3"
+                    ><i class="fa fa-star text-danger"></i
+                  ></label>
+
+                  <label for="stars-rating-2"
+                    ><i class="fa fa-star text-warning"></i
+                  ></label>
+
+                  <label for="stars-rating-1"
+                    ><i class="fa fa-star text-warning"></i
+                  ></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end product -->
+  </div>
+</div>
